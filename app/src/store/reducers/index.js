@@ -6,7 +6,7 @@ import {
 
 const initialState ={
     isLoading: false,
-    characters: [],
+    chars: [],
     error: "",
 }
 
@@ -21,7 +21,7 @@ export const reducer = (state = initialState, action) => {
         case FETCH_CHARS_SUCCESS:
             return {
                 ...state,
-                spells: action.payload,
+                chars: action.payload,
                 isLoading: false,
                 error: ""
             }

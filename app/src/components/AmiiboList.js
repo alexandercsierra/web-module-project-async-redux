@@ -3,25 +3,26 @@ import { connect } from 'react-redux'
 import { fetchData } from '../store'
 
 const AmiiboList = (props)  => {
-    const { fetchData } = props;
 
     useEffect(() => {
         props.fetchData();
-    }, [fetchData])
-
+    }, [])
+    console.log({props})
     return (
         <div className="container">
             <h1>Let's Collect Yoshi!</h1>
             {props.isLoading ? <h3>Researching...</h3> : null}
             {props.error ? <p>{props.error}</p> : null}
-            {/* {props.chars.map((char, i) => {
-                <>
-                <p key={i}>{char.name}</p>
-                </> 
-            })} */}
+            {props.chars.map((char, index) => {
+                return<div>
+                <p key={index}>{char.name}</p>
+                <img src={char.image} />
+                <h2>{char.gameSeries}</h2>
+                </div>
+            })}
+           
             
-            <div>{props.image}</div>
-            <h2>{props.gameSeries}</h2>
+            
            
         </div>
     )
