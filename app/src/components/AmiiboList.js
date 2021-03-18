@@ -11,6 +11,7 @@ const AmiiboList = (props)  => {
     return (
         <div className="container">
             <h1>Let's Collect Yoshi!</h1>
+            <div className="yoshiContainer">
             {props.isLoading ? <h3>Researching...</h3> : null}
             {props.error ? <p>{props.error}</p> : null}
             {props.chars.map((char, index) => {
@@ -22,7 +23,7 @@ const AmiiboList = (props)  => {
             })}
            
             
-            
+            </div>
            
         </div>
     )
