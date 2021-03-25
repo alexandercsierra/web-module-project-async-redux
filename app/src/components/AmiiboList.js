@@ -21,10 +21,7 @@ const AmiiboList = (props)  => {
                 <h2>{char.gameSeries}</h2>
                 </div>
             })}
-           
-            
             </div>
-           
         </div>
     )
 }
